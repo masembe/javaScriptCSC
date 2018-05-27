@@ -1,0 +1,36 @@
+<?php require('header.php') ?>
+<div class="container">
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+
+
+    <h1>Ads posted by  <?php echo $headerView->account->getName()?>  </h1>
+
+    <?php foreach ($view->advertDataSet as $advertData) {
+        if (($advertData->getEmail()== ($_SESSION["name"])) && $today->format('Y-m-d') < $advertData->getExpiryDate()) {
+            echo
+                '<div class="col-md-5  text-center" >' .
+                '<div class="col-md-8 feature">' .
+                '<div class="panel">' .
+                '<div class="panel-heading"> <!-- start panel heading -->' .
+                '<h1 class="panel-title"><strong>' . $advertData->getTitle() . '</strong></h1>' .
+                '</div> <!-- end panel heading -->' .
+                '<img src="images/' . $advertData->getImage() . '" class="img-thumbnail" alt="'.$advertData->getTitle().'">' .
+                '<p><strong>TV Type : </strong>' . $advertData->getAdType() . '</p>' .
+                '<p><strong>Ad Description : </strong>' . $advertData->getDescription() . '</p>' .
+                '<p><strong>Expires on : </strong>' . $advertData->getExpiryDate() . '</p>' .
+                '<p><strong>Price : </strong>£' . $advertData->getPrice() . '</p>' .
+                '<p>Item price is <strong>' . $advertData->getAdStatus() . '</strong></p>' .
+                '<br>' .
+                '<a href="myAds.php?delete_id='. $advertData->getId().'" class=" btn btn-danger btn-sm">Delete Ad</a> <!-- Contact Seller HERE -->' .
+                '</div> <!-- end panel -->'
+                . '</div>'
+                . '</div>'
+            ;
+        }
+
+    }?>
+            </form>
+               </div>
+
+
+<?php require('template/footer.phtml') ?>

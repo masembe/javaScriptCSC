@@ -1,0 +1,38 @@
+#title {
+    margin-top: 12px;
+    background-color: #fff;
+    color: #000;
+
+}
+
+#content {
+    background-color: #fff;
+    border-top: solid 6px #6e6672;
+}
+
+#footer {
+    margin_top: 20px;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    bottom:0;
+    position: fixed;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#createAdForm {
+    display: inline-table;
+   align-content: center;
+}
+
+p,h1 {
+    overflow-wrap: break-word;
+}
+
+ul {
+    list-style-type: none;
+}

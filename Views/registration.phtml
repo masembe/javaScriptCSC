@@ -1,0 +1,71 @@
+<?php require('header.php') ?>
+
+    <div class="flipeffect" > <!-- displays the registration page -->
+        <div class="col-md-4 col-md-offset-4 front">
+            <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" accept-charset="UTF-8" role="form" id="registration-form" class="form-signin">
+                <fieldset>
+                    <h2 class="text-center">Registration</h2>
+                    <?php if (isset($view->error)) : ?>
+                        <div class="alert alert-danger">
+                            <a href="#"> class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong><?php echo $view->error?></strong>
+                        </div>
+                    <?php endif?>
+
+                    <?php if (!isset($view->error)):?>
+
+                        <?php
+
+                        $number1 = mt_rand(1,50); //assigns a number in the range of 1 to 50
+                        $number2 = mt_rand(1,50);
+                        if( mt_rand(0,1) === 1) {
+                            $math = " $number1 +  $number2";
+                            $_SESSION['answer'] = $number1 + $number2; // Stores the number as a temporary session file
+                        }else{
+                            $math = " $number1 -  $number2";
+                            $_SESSION['answer'] = $number1 - $number2;
+                        }
+                        ?>
+
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Enter your email here"  name="email" type="text"  required= "required" maxlength="255">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Name" name="name" type="text"  required= "required" maxlength="255">
+                    </div>
+
+                        <div class="form-group">
+                            <input class="form-control" placeholder="01612345678" name="phone_number" type="number" >
+                        </div>
+
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Password" name="password" type="password"  required= "required" maxlength="255">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Confirm Password" name="confirm-password" type="password" required = "required" maxlength="255">
+                    </div>
+                        <div class="form-group">
+                            <p> <?php echo $math?> </p>
+                            <input class="form-control" placeholder="Find the answer" name="captchaInput" type="text" required = "required">
+                        </div>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <input class="form-control" placeholder="Address"  name="address" type="text" required= "required" maxlength="255">
+                        </div>
+
+                        <input class="btn btn-default btn-block" type="submit" name="register" value="Register">
+                    </div>
+
+                    <?php else: ?>
+
+                    <?php endif; ?>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+
+
+<?php require('template/footer.phtml') ?>

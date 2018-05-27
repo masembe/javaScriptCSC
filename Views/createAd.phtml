@@ -1,0 +1,53 @@
+<?php require('header.php') ?>
+
+
+
+
+
+    <div class="container" id="createAdForm">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="form1" class="form-upload">
+
+
+            <div class="form-group">
+                <label>Title</label>
+                <input type="text" name="title" class="form-control" placeholder="Title Name">
+            </div>
+
+            <div class="form-group">
+                <label>Type</label>
+                <textarea class="form-control" name="type" placeholder="What brand is it"></textarea>
+            </div>
+
+            <tr>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-control" input type="text" name="description" placeholder="Give a brief description about the item."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Status</label>
+                    <select class="form-control" name="status">
+                        <option value="T">Negotiable</option>
+                        <option value="F">Non-negotiable</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Photo</label>
+                    <input type="file" name="photo" accept=".png, .jpg, .jpeg">
+                    <p class="help-block">Only png and jpg images allowed</p>
+                </div>
+
+                <div class="form-group">
+                    <label>Price</label>
+                    <textarea class="form-control" name="price" placeholder="Input a price."></textarea>
+                </div>
+
+
+                <button type="submit" class="btn btn-default" name="Submit">Submit</button>
+    </form>
+    </div>
+
+
+
+<?php require('template/footer.phtml') ?>

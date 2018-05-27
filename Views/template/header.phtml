@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/css/my-style.css" rel="stylesheet">
+    <link rel="icon" type="image/jpg" href="images/favicon.jpg">
+
+    <title>GULA Website</title>
+</head>
+
+<body role="document">
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.php">GULA-Online Market</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="viewAd.php">Browse</a></li>
+            <li><a href="createAd.php">Upload Ad</a></li>
+        </ul>
+
+
+        <ul class="nav navbar-nav navbar-right">
+            <?php if (isset($headerView->welcome)) : ?>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">My Account
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="myAds.php">My Ads</a></li>
+                        <li><a href="watchlist.php">Watchlist</a></li>
+                    </ul>
+                </li>
+
+                <p class="navbar-text"><kbd><span class="glyphicon glyphicon-user">   <?php echo $headerView->account->getName()?></kbd></p>
+                <?php if($headerView->account->getAdminStatus()=="T")
+                    echo '<li><a href="#"><span class="glyphicon glyphicon-check"></span> Admin page</a></li>';?>
+                <li><a href="#"> <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                            <input type="submit" class="btn btn-danger btn-xs" value="Log Out" name="logout"/>
+                        </form></a></li>
+
+            <?php else:?>
+                <li><a href="registration.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+            <?php endif?>
+        </ul>
+    </div>
+</nav>
+
+
+
