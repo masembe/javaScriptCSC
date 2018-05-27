@@ -27,12 +27,12 @@ function renderJson(jsonResponse)
 
 
 
-    jsonResponse.forEach(function (obj) {
+    jsonResponse.forEach(function (advert) {
 
-        console.log(obj);
+        console.log(advert);
         var target = document.getElementById('results');
 
-        jsonString = `<img id="liveSearch" src= ${"images/"+obj.ad_photo}/><a href ="viewAdvert.php?id=${obj.ad_id}">${obj.ad_title}</a><br/> <br/>`;
+        jsonString = `<img id="liveSearch" src= ${"images/"+advert.ad_photo}/> <a href ="viewAdvert.php?id=${advert.ad_id}">    ${advert.ad_title}        </a>|            £${advert.price}<br/>`;
 
 
         var aTag = document.createElement("li");
