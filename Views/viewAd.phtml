@@ -52,6 +52,7 @@
                         '<p>Item price is <strong>' . $advertData->getAdStatus() . '</strong></p>' .
                         '<br>' .
                         '<a href="viewAd.php?id='. $advertData->getId().'"  class=" btn btn-default btn-sm">Add to Watchlist</a> <!-- Add to Watchlist HERE -->' .
+                        '<a href="viewAdvert.php?id='. $advertData->getId().'"  class=" btn btn-default btn-sm">View Ad</a>'.
                         '<a href="mailto:' . $advertData->getEmail() . '" target="_blank" class=" btn btn-default btn-sm">Contact Seller</a> <!-- Contact Seller HERE -->' .
                         '<a href="viewAd.php?delete_id='. $advertData->getId().'"  class=" btn btn-danger btn-sm">Delete Ad</a> <!-- Delete Ad HERE -->' .
                         '</div> <!-- end panel -->'
@@ -74,7 +75,7 @@
                         '<p>Item price is <strong>' . $advertData->getAdStatus() . '</strong></p>' .
                         '<br>' .
                         '<a href="viewAd.php?id='. $advertData->getId().'"   class=" btn btn-default btn-sm">Add to Watchlist</a> <!-- Add to Watchlist HERE -->' .
-                        '<a href="viewAdvert.php?id='. $advertData->getId().'"  class=" btn btn-info btn-sm">View Ad</a>'.
+                        '<a href="viewAdvert.php?id='. $advertData->getId().'"  class=" btn btn-default btn-sm">View Ad</a>'.
                         '<a href="mailto:' . $advertData->getEmail() . '" target="_blank" class=" btn btn-default btn-sm">Contact Seller</a> <!-- Contact Seller HERE -->' .
                         '</div> <!-- end panel -->'
                         . '</div>'
