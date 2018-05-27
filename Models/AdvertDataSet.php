@@ -114,6 +114,18 @@ class AdvertDataSet {
         }
         return $dataSet;
     }
+    
+    // returns a specific ad by its id
+    public function fetchAdsById($adId){
+        $sqlQuery="SELECT * FROM ad WHERE ad_id ='$adId';";
+        $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
+        $statement->execute(); // execute the PDO statement
+        $dataSet = [];
+        while ($row = $statement->fetch()) {
+            $dataSet[] = new AdvertData($row);
+        }
+        return $dataSet;
+    }
 
     public function suggestions($searchTerm)
     {
