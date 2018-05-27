@@ -1,0 +1,31 @@
+<?php require('template/header.phtml') ?>
+
+
+<body>
+
+<p>Start typing a name in the input field below:</p>
+
+<form>
+    Search: <input type="text" onkeyup="showHint(this.value)">
+</form>
+
+
+<script src="../js/Ajax.js">
+</script>
+
+<p>Suggestions: <span id="txtHint"></span></p>
+
+<div id="results">
+
+</div>
+
+
+<div id="searchResults">
+
+</div>
+
+</body>
+
+
+
+<?php require('template/footer.phtml') ?>

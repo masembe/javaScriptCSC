@@ -115,6 +115,56 @@ class AdvertDataSet {
         return $dataSet;
     }
 
+    public function suggestions($searchTerm)
+    {
+        $query = "SELECT ad_title FROM ad WHERE ad_title LIKE'" . $searchTerm . "%'";
+        try {
+            $statement = $this->_dbHandle->prepare($query);
+            $statement->execute();
+            $loop = 0;
+
+
+            //This while loop keeps storing fetched data while there is more to retrieve
+            while ($data = $statement->fetch()) {
+                $name[$loop] = $this->extractvalues1($data);
+                $loop = $loop + 1;
+                //Go through the matching details, loading them into objects
+            }
+
+
+        } catch (PDOException $e) {
+            echo $query . "<br>" . $e->getMessage();
+        }
+        $dbHandle = null;
+        return $name;
+    }
+
+//This function is for the extraction of all advert data from the array details. The values are stored in a search function class object which is then returned.
+    public function extractvalues1($data)
+    {
+        $adnames = $data[0];
+        return $adnames;
+    }
+
+    public function fetchHint($suggestion)
+    {
+        $sqlQuery = " SELECT * FROM ad WHERE ad_title LIKE '" . $suggestion . "%'";
+
+        $statement = $this->_dbHandle->prepare($sqlQuery); // prepare PDO statement
+        $statement->execute(); // execute the PDO statement
+
+
+
+        $dataSet = [];
+
+        while ($row = $statement->fetch()) {
+            array_push($dataSet, $row);
+        }
+
+
+        return $dataSet;  // return an array of WISHLIST objects
+    }
+
 }
 
 
