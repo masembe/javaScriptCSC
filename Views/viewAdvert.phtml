@@ -1,36 +1,5 @@
 <?php require('header.php') ?>
 
-<!--<div class="container">-->
-<!---->
-<!--        <div class="col-md-8 col-md-offset-2">-->
-<!--            <div class="row">-->
-<!---->
-<!--                <form role="form" action=""=--><?php //echo $_SERVER['PHP_SELF'];?><!--" method="post">-->
-<!--                <div class="form-group">-->
-<!--                    <div class="input-group">-->
-<!--                        <input class="form-control" type="text" name="title" placeholder="Search here"/>-->
-<!--                        <span class="input-group-btn">-->
-<!--                            <input class="btn btn-default" type="submit" name="searchButton" value="Search">-->
-<!--                        </span>-->
-<!--                        </span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!---->
-<!--    <li class="dropdown">-->
-<!--        <a class="dropdown-toggle btn btn-default" data-toggle="dropdown" href="#">Sort <span class="caret"></span></a>-->
-<!--        <ul class="dropdown-menu">-->
-<!--            <li><a href="../viewAd.php?sort=name(A-Z)">Title A to Z</a></li>-->
-<!--            <li><a href="../viewAd.php?sort=name(Z-A)">Title Z to A</a></li>-->
-<!--            <li><a href="../viewAd.php?sort=negotiable">Is negotiable</a></li>-->
-<!--            <li><a href="../viewAd.php?sort=nonnegotiable">Is Non-negotiable</a></li>-->
-<!--            <li><a href="../viewAd.php?sort=priceAsc">Lowest priced first</a></li>-->
-<!--            <li><a href="../viewAd.php?sort=priceDesc">Highest priced first</a></li>-->
-<!---->
-<!--        </ul>-->
-<!--    </li>-->
-
     <?php foreach ($view->advertDataSet as $advertData) {
        // if ($today->format('Y-m-d') < $advertData->getExpiryDate()) { //Checks if the current date is still less than expiry date
             if (isset($_SESSION["name"])) {
