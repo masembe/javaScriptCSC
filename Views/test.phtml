@@ -2,13 +2,16 @@
 
 
 <body>
-
-<p>Start typing a name in the input field below:</p>
-
+<div class="container">
+<h2>Start typing in the input field below:</h2>
+<div class="col-lg-12">
 <form>
-    Search: <input type="text" onkeyup="showHint(this.value)">
+    <div class="form-group">
+     <label for="search">Search:</label>
+    <input type="text" class="form-control" onkeyup="showHint(this.value)">
+    </div>
 </form>
-
+</div>
 
 <script src="../js/Ajax.js">
 </script>
@@ -23,7 +26,8 @@
 <div id="searchResults">
 
 </div>
-
+</div>
+    
 </body>
 
 

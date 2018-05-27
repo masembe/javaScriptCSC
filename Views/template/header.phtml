@@ -5,60 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Ibrahim Masembe">
 
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <!-- Bootstrap theme -->
-    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/my-style.css" rel="stylesheet">
     <link rel="icon" type="image/jpg" href="images/favicon.jpg">
-
+    
+    <!-- sticky footer -->
+     <link href="css/sticky-footer.css" rel="stylesheet">
+    
+    <!-- font awesome link -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    
     <title>GULA Website</title>
 </head>
 
 <body role="document">
-
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="index.php">GULA-Online Market</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li><a href="index.php">Home</a></li>
-            <li><a href="viewAd.php">Browse</a></li>
-            <li><a href="createAd.php">Upload Ad</a></li>
-            <li><a href="test.php">Live Search</a></li>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+      <a class="navbar-brand" href="index.php">GULA-Online Market</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.php">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="viewAd.php">Browse</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="createAd.php">Upload Ad</a>
+          </li>
+        <li class="nav-item">
+            <a class="nav-link" href="test.php">Live Search</a>
+          </li>
         </ul>
-
-
-        <ul class="nav navbar-nav navbar-right">
+          
+             <ul class="navbar-nav mt-3 mt-md-0">
             <?php if (isset($headerView->welcome)) : ?>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">My Account
-                        <span class="caret"></span></a>
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><?php echo $headerView->account->getName()?>
+                        </a>
                     <ul class="dropdown-menu">
-                        <li><a href="myAds.php">My Ads</a></li>
-                        <li><a href="watchlist.php">Watchlist</a></li>
+                        <li><a href="myAds.php" class="dropdown-item">My Ads</a></li>
+                        <li><a href="watchlist.php" class="dropdown-item">Watchlist</a></li>
                     </ul>
                 </li>
 
-                <p class="navbar-text"><kbd><span class="glyphicon glyphicon-user">   <?php echo $headerView->account->getName()?></kbd></p>
                 <?php if($headerView->account->getAdminStatus()=="T")
-                    echo '<li><a href="#"><span class="glyphicon glyphicon-check"></span> Admin page</a></li>';?>
-                <li><a href="#"> <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                            <input type="submit" class="btn btn-danger btn-xs" value="Log Out" name="logout"/>
+                    echo '<li><a href="#" class="nav-item"> Admin page</a></li>';?>
+                <li class="nav-item" style="padding-left:5px;"><a href="#"> <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                            <input type="submit" class="btn btn-sm btn-outline-secondary" value="Log Out" name="logout"/>
                         </form></a></li>
 
             <?php else:?>
-                <li><a href="registration.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li class="nav-item"><a href="registration.php" class="nav-link"><i class="fas fa-user"></i> Sign Up </a></li>
+                <li class="nav-item"><a href="login.php" class="nav-link"> Login <i class="fas fa-sign-in-alt"></i></a></li>
 
             <?php endif?>
         </ul>
-    </div>
-</nav>
-
+      </div>
+    </nav>
+       <main role="main" class="container">
 
 

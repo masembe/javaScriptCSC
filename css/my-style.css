@@ -10,20 +10,6 @@
     border-top: solid 6px #6e6672;
 }
 
-#footer {
-    margin_top: 20px;
-    text-align: center;
-    background-color: #000;
-    color: #fff;
-    bottom:0;
-    position: fixed;
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 #createAdForm {
     display: inline-table;
    align-content: center;
@@ -35,4 +21,11 @@ p,h1 {
 
 ul {
     list-style-type: none;
+}
+.card {
+  float: left;
+  width: 30.333%;
+  padding: .50rem;
+  margin-bottom: 2rem;
+  border: 0;
 }
