@@ -34,7 +34,6 @@ function renderJson(jsonResponse)
 
         jsonString = `<img id="liveSearch" src= ${"images/"+advert.ad_photo}/> <a href ="viewAdvert.php?id=${advert.ad_id}">    ${advert.ad_title}        </a>|            £${advert.price}<br/>`;
 
-
         var aTag = document.createElement("li");
 
         aTag.innerHTML = jsonString;
