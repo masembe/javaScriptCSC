@@ -13,7 +13,6 @@ function showHint(str) {
             .then(function(response) {
 
                 //console.log(response);
-
                 return response.json()
         })
             .then(function(json) {
@@ -33,7 +32,7 @@ function renderJson(jsonResponse)
         console.log(obj);
         var target = document.getElementById('results');
 
-        jsonString = `<img width="50px" height="50px" src= ${"images/"+obj.ad_photo}/><a href ="viewAdvert.php?id=${obj.ad_id}">${obj.ad_title}</a><br/> <br/>`;
+        jsonString = `<img id="liveSearch" src= ${"images/"+obj.ad_photo}/><a href ="viewAdvert.php?id=${obj.ad_id}">${obj.ad_title}</a><br/> <br/>`;
 
 
         var aTag = document.createElement("li");
