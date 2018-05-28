@@ -129,7 +129,7 @@ class AdvertDataSet {
 
     public function suggestions($searchTerm)
     {
-        $query = "SELECT ad_title FROM ad WHERE ad_title LIKE'%$searchTerm%'";
+        $query = "SELECT ad_title FROM ad WHERE ad_title LIKE'%$searchTerm%' LIMIT 5";
         try {
             $statement = $this->_dbHandle->prepare($query);
             $statement->execute();
@@ -160,7 +160,7 @@ class AdvertDataSet {
 
     public function fetchHint($suggestion)
     {
-        $sqlQuery = " SELECT * FROM ad WHERE ad_title LIKE '%$suggestion%'";
+        $sqlQuery = " SELECT * FROM ad WHERE ad_title LIKE '%$suggestion%' LIMIT 5";
 
         $statement = $this->_dbHandle->prepare($sqlQuery); // prepare PDO statement
         $statement->execute(); // execute the PDO statement

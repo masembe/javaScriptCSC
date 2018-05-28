@@ -9,7 +9,7 @@ function showHint(str) {
         return;
     } else {
 
-        fetch("gethint.php?q=" + str)
+        fetch("livesearch.php?q=" + str)
             .then(function(response) {
 
                 //console.log(response);
