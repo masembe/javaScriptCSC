@@ -13,10 +13,10 @@
                         '<p><strong>Expires on : </strong>' . $advertData->getExpiryDate() . '</p>' .
                         '<p><strong>Price : </strong>£' . $advertData->getPrice() . '</p>' .
                         '<p>Item price is <strong>' . $advertData->getAdStatus() . '</strong></p>' .
-                        '<br>' .
-                        '<a href="viewAd.php?id='. $advertData->getId().'"  class=" btn btn-secondary">Add to Watchlist</a> <!-- Add to Watchlist HERE -->' .
-                        '<a href="mailto:' . $advertData->getEmail() . '" target="_blank" class=" btn btn-secondary">Contact Seller</a> <!-- Contact Seller HERE -->' .
-                        '<a href="viewAd.php?delete_id='. $advertData->getId().'"  class=" btn btn-danger btn-sm">Delete Ad</a> <!-- Delete Ad HERE --></div>
+                        '<div class="btn-group">' .
+                        '<a href="viewAd.php?id='. $advertData->getId().'"  class="btn btn-outline-secondary btn-sm">Add to Watchlist</a> <!-- Add to Watchlist HERE -->' .
+                        '<a href="mailto:' . $advertData->getEmail() . '" target="_blank" class="btn btn-outline-secondary btn-sm btn-sm">Contact Seller</a> <!-- Contact Seller HERE -->' .
+                        '<a href="viewAd.php?delete_id='. $advertData->getId().'"  class="btn btn-outline-danger btn-sm">Delete Ad</a> <!-- Delete Ad HERE --></div></div>
                         </div>';
                 }
                 else{
@@ -29,35 +29,22 @@
                         '<p><strong>Expires on : </strong>' . $advertData->getExpiryDate() . '</p>' .
                         '<p><strong>Price : </strong>£' . $advertData->getPrice() . '</p>' .
                         '<p>Item price is <strong>' . $advertData->getAdStatus() . '</strong></p>' .
-                        '<br>' .
-                        '<a href="viewAd.php?id='. $advertData->getId().'"  class=" btn btn-secondary">Add to Watchlist</a> <!-- Add to Watchlist HERE -->' .
-                        '<a href="mailto:' . $advertData->getEmail() . '" target="_blank" class=" btn btn-secondary">Contact Seller</a> <!-- Contact Seller HERE -->' .
-                        '</div>
+                        '<div class="btn-group">' .
+                        '<a href="viewAd.php?id='. $advertData->getId().'"  class="btn btn-outline-secondary btn-sm">Add to Watchlist</a> <!-- Add to Watchlist HERE -->' .
+                        '<a href="mailto:' . $advertData->getEmail() . '" target="_blank" class="btn btn-outline-secondary btn-sm">Contact Seller</a> <!-- Contact Seller HERE -->' .
+                        '</div></div>
                         </div>';
                 }
             }
             elseif(!isset($_SESSION["name"]))// Prevents people who are not logged in from viewing information
                 {
-
                     echo
-                        '<div class="col-md-5  text-center" >' .
-                        '<div class="col-md-8 feature">' .
-                        '<div class="panel">' .
-                        '<div class="panel-heading"> <!-- start panel heading -->' .
-                        '<h1 class="panel-title"><strong>' . $advertData->getTitle() . '</strong></h1>' .
-                        '</div> <!-- end panel heading -->' .
-                        '<img src="images/' . $advertData->getImage() . '" class="img-thumbnail" alt="'.$advertData->getTitle().'">' .
-                        '<p><strong>TV Type : </strong>' . $advertData->getAdType() . '</p>' .
-                        '<p><strong>Ad Description : </strong>' . $advertData->getDescription() . '</p>' .
-                        '<h3><i><strong>You need to be logged in to continue </strong></i></h3>' .
-
-
-                        '<br>' .
-
-                        '</div> <!-- end panel -->'
-                        . '</div>'
-                        . '</div>'
-                    ;
+                         '<div class="card text-center">' .
+                        ' <div class="card-header">' . $advertData->getTitle() . '</div> <!-- header -->' .
+                        '<img src="images/' . $advertData->getImage() . '" class="card-img-top"  style="width:auto;max-height:220px;" alt="' . $advertData->getTitle() . '">' .
+                        '<div class="card-body"><p><strong>TV Type : </strong>' . $advertData->getAdType() . '</p>' .
+                        '<h3><i><strong>You need to be logged in to continue </strong></i></h3></div>
+                        </div>';
 
             }
         //}
