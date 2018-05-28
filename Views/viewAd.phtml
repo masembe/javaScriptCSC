@@ -44,11 +44,11 @@
                         '<p><strong>Expires on : </strong>' . $advertData->getExpiryDate() . '</p>' .
                         '<p><strong>Price : </strong>£' . $advertData->getPrice() . '</p>' .
                         '<p>Item price is <strong>' . $advertData->getAdStatus() . '</strong></p>' .
-                        '<div class="card-footer">' .
-                        '<a href="viewAd.php?id='. $advertData->getId().'"  class=" btn btn-default btn-sm">Add to Watchlist</a> <!-- Add to Watchlist HERE -->' .
-                        '<a href="mailto:' . $advertData->getEmail() . '" target="_blank" class=" btn btn-default btn-sm">Contact Seller</a> <!-- Contact Seller HERE -->' .
-                        '<a href="viewAdvert.php?id='. $advertData->getId().'"  class=" btn btn-default btn-sm">View Ad</a>'.
-                        '<a href="viewAd.php?delete_id='. $advertData->getId().'"  class=" btn btn-danger btn-sm">Delete Ad</a> <!-- Delete Ad HERE --></div></div>
+                        '<div class="btn-group">' .
+                        '<a href="viewAd.php?id='. $advertData->getId().'"  class=" btn btn-outline-secondary btn-sm">Watchlist +</a> <!-- Add to Watchlist HERE -->' .
+                        '<a href="mailto:' . $advertData->getEmail() . '" target="_blank" class=" btn btn-outline-secondary btn-sm">Contact Seller</a> <!-- Contact Seller HERE -->' .
+                        '<a href="viewAdvert.php?id='. $advertData->getId().'"  class=" btn btn-outline-secondary btn-sm">View</a>'.
+                        '<a href="viewAd.php?delete_id='. $advertData->getId().'"  class=" btn btn-outline-danger btn-sm">Delete</a> <!-- Delete Ad HERE --></div></div>
                         </div>';
                 }
                 else{
@@ -60,10 +60,10 @@
                         '<p><strong>Expires on : </strong>' . $advertData->getExpiryDate() . '</p>' .
                         '<p><strong>Price : </strong>£' . $advertData->getPrice() . '</p>' .
                         '<p>Item price is <strong>' . $advertData->getAdStatus() . '</strong></p>' .
-                        '<div class="card-footer">' .
-                        '<a href="viewAd.php?id='. $advertData->getId().'"  class=" btn btn-default btn-sm">Add to Watchlist</a> <!-- Add to Watchlist HERE -->' .
-                        '<a href="viewAdvert.php?id='. $advertData->getId().'"  class=" btn btn-default btn-sm">View Ad</a>'.
-                        '<a href="mailto:' . $advertData->getEmail() . '" target="_blank" class=" btn btn-default btn-sm">Contact Seller</a> <!-- Contact Seller HERE -->' .
+                        '<div class="btn-group">' .
+                        '<a href="viewAd.php?id='. $advertData->getId().'"  class=" btn btn-outline-secondary btn-sm">Watchlist +</a> <!-- Add to Watchlist HERE -->' .
+                        '<a href="viewAdvert.php?id='. $advertData->getId().'"  class=" btn btn-outline-secondary btn-sm">View Ad</a>'.
+                        '<a href="mailto:' . $advertData->getEmail() . '" target="_blank" class=" btn btn-outline-secondary btn-sm">Contact Seller</a> <!-- Contact Seller HERE -->' .
                         '</div></div>
                         </div>';
                 }
