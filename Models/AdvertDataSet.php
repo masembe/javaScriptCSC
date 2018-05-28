@@ -10,11 +10,8 @@ class AdvertDataSet {
         $this->_dbInstance = Database::getInstance();
         $this->_dbHandle = $this->_dbInstance->getdbConnection();
     }
+
     public function fetchAllAdverts() {
-        if(isset($_GET['no'])){
-             $noOfAds = $_GET['no'];
-        }else
-        $noOfAds = 6;
         $sqlQuery = 'SELECT * FROM ad';
         if(isset($_GET['sort']) ) {
             if ($_GET['sort'] == "priceDesc") {
@@ -34,7 +31,7 @@ class AdvertDataSet {
         }
         else {
 
-            $sqlQuery = 'SELECT * FROM ad LIMIT '. $noOfAds;
+            $sqlQuery = 'SELECT * FROM ad';
         }
         $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
         $statement->execute(); // execute the PDO statement
@@ -108,7 +105,7 @@ class AdvertDataSet {
 
     // returns all the ads that contains $title in their title,type or description
     public function fetchAdsBySearch($title){
-        $sqlQuery="SELECT * FROM ad WHERE ad_title LIKE '%$title%' OR ad_type LIKE '%$title%' OR ad_description LIKE '%$title%' LIMIT 6;";
+        $sqlQuery="SELECT * FROM ad WHERE ad_title LIKE '%$title%' OR ad_type LIKE '%$title%' OR ad_description LIKE '%$title%' ;";
         $statement = $this->_dbHandle->prepare($sqlQuery); // prepare a PDO statement
         $statement->execute(); // execute the PDO statement
         $dataSet = [];
