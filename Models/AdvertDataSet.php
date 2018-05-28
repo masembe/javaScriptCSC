@@ -176,6 +176,25 @@ class AdvertDataSet {
 
         return $dataSet;  // return an array of WISHLIST objects
     }
+    
+    public function loadMore($no)
+    {
+        $sqlQuery = 'SELECT * FROM ad LIMIT '. $no;
+
+        $statement = $this->_dbHandle->prepare($sqlQuery); // prepare PDO statement
+        $statement->execute(); // execute the PDO statement
+
+
+
+        $dataSet = [];
+
+        while ($row = $statement->fetch()) {
+            array_push($dataSet, $row);
+        }
+
+
+        return $dataSet;  // return an array of WISHLIST objects
+    }
 
 }
 
